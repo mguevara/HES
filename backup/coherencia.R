@@ -1,7 +1,8 @@
+g = ches1217
 distance_mat<-distances(g)
 
 data_alumno_coe<-classification %>% 
-  inner_join(data_postulaciones,by=c("ID","Year","IDYEAR")) %>%
+  inner_join(data_postulaciones_,by=c("ID","Year","IDYEAR")) %>%
   filter(Big.Group %in% V(g)$name) %>% #filtering the degree programs in the HES
   group_by(IDYEAR) %>%
   summarise(coherence=ifelse(try(sum(distance_mat[unique(as.character(Big.Group)),unique(as.character(Big.Group))])/(n()*(n()-1)))=="try-error",NA,sum(distance_mat[unique(as.character(Big.Group)),unique(as.character(Big.Group))])/(n()*(n()-1)))) %>%

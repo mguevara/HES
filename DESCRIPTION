@@ -5,7 +5,7 @@ Author: Miguel R. Guevara <miguel.guevara@upla.cl>, Jocelyna Davit
         <jdavyt@udd.cl>
 Maintainer: Miguel R. Guevara <miguel.guevara@upla.cl>
 Description: Load data of higher education, computes the complex network High Education Space HES and provides data analysis regarding this network and educational indicators.
-Depends:  igraph
+Depends: igraph, tidyverse
 Suggests: stats
 URL: https://github.com/mguevara/hes
 Date: 2020-01-01
@@ -15,4 +15,4 @@ Repository: CRAN
 LazyData: true
 NeedsCompilation: no
 Encoding: UTF-8
-RoxygenNote: 6.0.1
+RoxygenNote: 7.0.2

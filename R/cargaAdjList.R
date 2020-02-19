@@ -1,1 +1,0 @@
-adj_chile_1217<-read.csv("Dropouts_Chile/Data_Droppout/AdjacencyList_Chile_1217.csv", header = TRUE, sep = ",",stringsAsFactors = F)#, quote = "\"",

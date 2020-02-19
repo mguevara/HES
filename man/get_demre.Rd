@@ -6,8 +6,11 @@
 \usage{
 get_demre()
 }
+\value{
+A data frame with information of programs or careers. It includes BigGroup field and Stem Field.
+}
 \description{
-Load data from demre.csv. It is a file previously curated manually. It includes BigGroup field and Stem Field.
+Load data from demre.csv. It is a file previously curated manually.
 }
 \examples{
 

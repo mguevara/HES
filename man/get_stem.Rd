@@ -6,8 +6,14 @@
 \usage{
 get_stem(demre)
 }
+\arguments{
+\item{demre}{a dataframe previously got with function get_demre()}
+}
+\value{
+Information of Stem degree
+}
 \description{
-Using demre data, previously computed, adds Stem programs.
+Using demre data, previously computed, indicates Stem programs.
 }
 \examples{
 

@@ -6,8 +6,11 @@
 \usage{
 get_data_postulaciones()
 }
+\value{
+a dataframe with postulations.
+}
 \description{
-Imports data of type .Rda prevously created and saved in local pc. Also import demre.csv
+Imports data of type .Rda prevously created and saved in local pc. Also import demre.csv by using function get_demre.
 }
 \examples{
 

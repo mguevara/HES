@@ -1,6 +1,6 @@
 #' @title Get Data dir
 #' @description Retrieves the location of data, searching several possible directories. 
-#' 
+#' @return Return a string with the path to a found data directory. 
 #' @examples 
 #' @export
 get_data_dir <- function(){
@@ -17,7 +17,9 @@ get_data_dir <- function(){
 }
 
 #' @title Get Data of  Postulaciones
-#' @description Imports data of type .Rda prevously created and saved in local pc. Also import demre.csv
+#' @description Imports data of type .Rda prevously created and saved in local pc. Also import demre.csv by using function get_demre.
+#' 
+#' @return a dataframe with postulations.
 #' 
 #' @examples 
 #'
@@ -38,18 +40,21 @@ get_data_postulaciones <- function(){
   data_postulaciones<-merge(data_postulaciones_,demre,by.x ="DegreeCode",by.y="DEMRE.Code" )
   print("HES: Creating ID-Year key.")
   data_postulaciones$IDYEAR<-paste0(data_postulaciones$ID,data_postulaciones$Year)
-  print("HES: Creating ID-Year key.")
+  print("HES:Created ID-Year key.")
   return(data_postulaciones)
 }
 
 
 #' @title Get Data of students clasified
 #' @description Load data of students. Filter only enrolled and situation(P), then classify among dropped and not dropeed. 
+#' @return A data frame with information of students and a field useful to get dropped or not dropped information.
+#' 
+#' @param n Integer indicating a number to conduct sampling. If not indicated, all the data of students will be retrieved.
 #' 
 #' @examples 
 #' 
 #' @export
-get_classification <- function(n=0){
+  get_classification <- function(n=0){
   print("HES: Loading datos_demre.rda...")
   start_time = Sys.time()
   print(start_time)
@@ -99,7 +104,9 @@ get_classification <- function(n=0){
 }
 
 #' @title Get demre
-#' @description Load data from demre.csv. It is a file previously curated manually. It includes BigGroup field and Stem Field. 
+#' @description Load data from demre.csv. It is a file previously curated manually. 
+#' 
+#' @return A data frame with information of programs or careers. It includes BigGroup field and Stem Field. 
 #' 
 #' @examples 
 #' 
@@ -118,7 +125,10 @@ get_demre <- function()
 
 
 #' @title Get Stem
-#' @description Using demre data, previously computed, adds Stem programs.
+#' @description Using demre data, previously computed, indicates Stem programs.
+#' 
+#' @param demre a dataframe previously got with function get_demre()
+#' @return Information of Stem degree
 #' 
 #' @examples 
 #' 
@@ -137,6 +147,11 @@ get_stem <- function(demre)
 #' @title Get Alumno coe
 #' @description Alumnos merged with postulaciones merged with coherence.
 #' 
+#' @param g Graph containing a network of kind Higher Education Space HES. Default value is ches1227, CHilean HES for 2012-2017 dataset.
+#' @param classification Dataframe with students' information previously obtained with function get_classification(). 
+#' @param data_postulaciones Dataframe with students' information previously obtained with function get_data_postulaciones()
+#' 
+#' @return Data useful to perform regressions and analysis. It includes information of Coherence of network HES and information of dropped and not-dropped.
 #' @examples 
 #' 
 #' @export

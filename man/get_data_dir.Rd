@@ -6,6 +6,9 @@
 \usage{
 get_data_dir()
 }
+\value{
+Return a string with the path to a found data directory.
+}
 \description{
 Retrieves the location of data, searching several possible directories.
 }

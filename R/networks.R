@@ -7,6 +7,6 @@
 #' plot_hes(g=ches0611)
 #' @export
 plot_hes <- function(g)
-{
+{                                                                     
   plot.igraph(g,  vertex.label.cex = 0.5, vertex.label.font = 1, vertex.label.family = "Helvetica", vertex.label.color="black", asp =FALSE)
 }

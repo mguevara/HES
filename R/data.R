@@ -14,7 +14,6 @@
 #' @examples
 #' data(ches0611)
 #' summary(ches0611)
-#' plot_hes(ches0611)
 "ches0611"
 
 #' ches1217 dataset
@@ -33,5 +32,4 @@
 #' @examples
 #' data(ches1217)
 #' summary(ches1217)
-#' plot_hes(ches1217)
 "ches1217"

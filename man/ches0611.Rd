@@ -18,7 +18,6 @@ Graph of Chilean Higher Education Space between 2006-2011.
 \examples{
 data(ches0611)
 summary(ches0611)
-plot_hes(ches0611)
 }
 \references{
 Candia, C., Encarnação, S., & Pinheiro, F. L. (2019). The higher education space: Connecting degree programs from individuals’ choices. EPJ Data Science, 8(1), 1–17. https://doi.org/10.1140/epjds/s13688-019-0218-4

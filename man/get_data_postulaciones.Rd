@@ -10,5 +10,9 @@ get_data_postulaciones()
 Imports data of type .Rda prevously created and saved in local pc. Also import demre.csv
 }
 \examples{
+<<<<<<< HEAD
 
+=======
+postulaciones <- get_data_postulaciones()
+>>>>>>> 2ba6505fcde673ae3749badc403009fe888de9e3
 }

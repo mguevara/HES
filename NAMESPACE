@@ -2,6 +2,7 @@
 
 export(get_alumno_coe)
 export(get_classification)
+export(get_data_dir)
 export(get_data_postulaciones)
 export(get_demre)
 export(get_stem)

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #' @title Get Data dir
 #' @description Retrieves the location of data, searching several possible directories. 
 #' 
@@ -17,9 +16,6 @@ get_data_dir <- function(){
   }
 }
 
-
-=======
->>>>>>> 2ba6505fcde673ae3749badc403009fe888de9e3
 #' @title Get Data of  Postulaciones
 #' @description Imports data of type .Rda prevously created and saved in local pc. Also import demre.csv
 #' 
@@ -30,22 +26,13 @@ get_data_postulaciones <- function(){
   print("HES: Loading datos_demre.rda...")
   start_time = Sys.time()
   print(start_time)
-<<<<<<< HEAD
+
   data_dir = get_data_dir()
   load(paste(data_dir, "datos_demre_CHILE.rda", sep=""))
   end_time = Sys.time()
   print("... loaded. Time:")
   print(end_time)
   
-=======
-  if(file.exists("Dropouts_Chile/datos_demre.rda"))
-    load("Dropouts_Chile/datos_demre.rda")  #pc Joselina
-  else if(file.exists("../../Chilean Education Projects/Dropouts/Data/datos_demre_CHILE.rda")) #pc Miguel
-    load("../../Chilean Education Projects/Dropouts/Data/datos_demre_CHILE.rda")
-  end_time = Sys.time()
-  print("... loaded. Time:")
-  print(end_time)
->>>>>>> 2ba6505fcde673ae3749badc403009fe888de9e3
   demre <- get_demre()
   print("HES: Merging with Demre (BigGroup).")
   data_postulaciones<-merge(data_postulaciones_,demre,by.x ="DegreeCode",by.y="DEMRE.Code" )
@@ -63,7 +50,6 @@ get_data_postulaciones <- function(){
 #' 
 #' @export
 get_classification <- function(n=0){
-<<<<<<< HEAD
   print("HES: Loading datos_demre.rda...")
   start_time = Sys.time()
   print(start_time)
@@ -72,17 +58,6 @@ get_classification <- function(n=0){
   end_time = Sys.time()
   print("... loaded. Time:")
   print(end_time)
-=======
-  start_time = Sys.time()
-  print(paste("HES: Loading datos_demre.rda...", start_time))
-  if(file.exists("Dropouts_Chile/datos_demre.rda"))
-    load("Dropouts_Chile/datos_demre.rda")  #pc Joselina
-  else if(file.exists("../../Chilean Education Projects/Dropouts/Data/datos_demre_CHILE.rda")) #pc Miguel
-    load("../../Chilean Education Projects/Dropouts/Data/datos_demre_CHILE.rda")
-  end_time = Sys.time()
-  print(paste("HES: ...loaded .rdata"))
-  print(end_time-start_time)
->>>>>>> 2ba6505fcde673ae3749badc403009fe888de9e3
   
   rm(data_postulaciones_)
   
@@ -98,11 +73,6 @@ get_classification <- function(n=0){
   rm(data_alumno)
   rm(application)
   
-<<<<<<< HEAD
-=======
-  
-  
->>>>>>> 2ba6505fcde673ae3749badc403009fe888de9e3
   if(n){
     print(paste("HES: Subseting dataframe FILLED to ", n, "registers..."))
     filled <- sample_n(filled, n, replace = TRUE )
@@ -136,15 +106,8 @@ get_classification <- function(n=0){
 #' @export
 get_demre <- function()
 {
-<<<<<<< HEAD
   data_dir = get_data_dir()
   archivo = paste(data_dir, "demre.csv", sep="")
-=======
-  if(file.exists("Dropouts_Chile/Data_Droppout/demre.csv"))
-    archivo = "Dropouts_Chile/Data_Droppout/demre.csv"
-  else if (file.exists("../../Chilean Education Projects/Dropouts/Data/demre.csv")) 
-    archivo = "../../Chilean Education Projects/Dropouts/Data/demre.csv"
->>>>>>> 2ba6505fcde673ae3749badc403009fe888de9e3
   
   demre<-read.csv(archivo, header = TRUE, sep = ",",stringsAsFactors = T,encoding = 'UTF-8')
   
